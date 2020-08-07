@@ -1,0 +1,65 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css" integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+
+    <!-- FAVICON -->
+
+      <link rel="icon" type="image/png" href="{% static "youtube.svg" %}" >
+
+    <!-- google fonts -->
+      <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
+
+      <link rel="stylesheet" href="{% static "css/style.css" %}">
+
+    <title>My Portfolio site</title>
+  </head>
+  <body>
+
+  <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="ml-1 navbar-brand" href="{% url 'home' %}">
+          <img style="width: 50px;" src="{% static "youtube.svg" %}" alt="">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="www.facebook.com"> Facebook </a>
+          </li>
+             <li class="nav-item active">
+            <a class="nav-link" href="www.linkedin.com"> Linkedin </a>
+          </li>
+          <li style="border: 1px solid;
+                     border-radius: 5px;
+                     background-color: blue;" class="nav-item mr-1 ml-1">
+                <a style="color: #fff;" class="nav-link" href="{% url 'blog:all_blogs' %}">Blog</a>
+          </li>
+        </ul>
+      </div>
+</nav>
+
+
+       {% block content %}
+
+       {% endblock %}
+
+  </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js" integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J" crossorigin="anonymous"></script>
+  </body>
+</html>

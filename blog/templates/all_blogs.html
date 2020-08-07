@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="blog-div">
+
+        <h1>Blog</h1>
+
+        <h5> Amil has written {{ blogs.count }} blog{{ blogs.count|pluralize }} </h5>
+
+    </div>
+
+    <div class="blogs">
+
+            {% for blog in blogs %}
+
+            <div class="for-blogs" >
+                        <a href="{% url 'blog:detail' blog.id %}">
+                            <h5>{{ blog.title }}</h5>
+                          </a>
+
+                            <h5>{{ blog.date|date:'M d Y'|upper }}</h5>
+
+                         {#    <p>{{ blog.description|safe|truncatechars:100 }}</p>#}
+                        <p>{{ blog.description|striptags|truncatechars:100 }}</p>
+
+                         <a href="{% url 'blog:detail' blog.id %}">
+                                <button class="btn btn-primary" >Read more</button>
+                        </a>
+            </div>
+
+        {% endfor %}
+
+    </div>
+
+{% endblock %}
+
+

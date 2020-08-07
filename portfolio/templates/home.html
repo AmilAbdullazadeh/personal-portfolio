@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="">
+
+    {% load static %}
+
+    <div class="img-div">
+
+            <img style="width: 700px;" src="{% static '55752352_2394580954103812_1289865987083993088_o.jpg' %}" alt="Logo image">
+
+            <h4 class="my-4" >Amil Abdullazadeh</h4>
+            <strong class="my-1" > I am a Web and Mobile Developer </strong>
+    </div>
+
+
+    <div class="projects-div">
+
+        <h4>Portfolio</h4>
+        <hr>
+
+    <div class="card-deck">
+
+        {% for project in projects %}
+
+          <div class="card">
+          {% if project.url %}
+              <a href="{{ project.url }}">
+                  <img src="{{ project.image.url }}" alt="{{ project.title }}" class="card-img-top">
+              </a>
+          {% endif %}
+            <div class="card-body">
+              <h5 class="card-title">{{ project.title }}</h5>
+              <p class="card-text">{{ project.description }}</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
+
+        {% endfor %}
+
+    </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
+
