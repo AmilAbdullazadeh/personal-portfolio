@@ -1,1 +1,7 @@
 # Created by .ignore support plugin (hsz.mobi)
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+/static/
